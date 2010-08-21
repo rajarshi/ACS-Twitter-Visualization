@@ -1,0 +1,7 @@
+Quick hack to display tweets from the Boston ACS as a tag cloud.
+
+Make use of Dynacloud (http://johannburkard.de/blog/programming/javascript/dynacloud-a-dynamic-javascript-tag-keyword-cloud-with-jquery.html) and TwitterSearch (http://ryanfaerman.com/twittersearch/)
+
+Currently we display the top 100 words.
+
+Needs prettifying
