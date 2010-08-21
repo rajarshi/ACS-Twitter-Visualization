@@ -22,7 +22,7 @@ $(document).ready(function() {
 			opacity: .5, 
 			color: '#fff' 
 			} });
-	$.ajax({ url : 'http://rguha.net/atv/atv.php', 
+	$.ajax({ url : 'http://rguha.net/atv/atv.php?term=%23acs_boston&what=text', 
 		    success : function(data) {
 		    $("#all").html(data);
 		    $("div.dynacloud").dynaCloud();

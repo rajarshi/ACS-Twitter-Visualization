@@ -1,14 +1,18 @@
 <?php include("TwitterSearch.phps"); 
 
-$search = new TwitterSearch("#acs_boston");
+$term = $_GET['term'];
+$what = $_GET['what'];
+
+$search = new TwitterSearch($term);
 $search->user_agent = 'phptwittersearch:rajarshi.guha@gmail.com';
 $results = $search->rpp(50000)->results();
 
-$txt = "";
+$ret = "";
 foreach ($results as $result) {
-$txt = $txt . " " . $result->{'text'};
+  if ($what == "text") {
+    $ret = $ret . " " . $result->{'text'};
+  }
 }
-echo $txt;
-#print_r($results[0]);
+echo $ret;
 ?>
 
