@@ -3,19 +3,31 @@
 <!-- <META HTTP-EQUIV=REFRESH CONTENT=60> -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="http://johannburkard.de/resources/Johann/jquery.dynacloud-5.js"></script>
+<script type="text/javascript" src="http://github.com/malsup/blockui/raw/master/jquery.blockUI.js?v2.31"></script>
 <script type="text/javascript">
 $(document).ready(function() {
-//$.merge($.dynacloud.stopwords, [ "RT" ]);
-$.dynaCloud.max = 150;
-$.dynaCloud.sort = false;
-$.ajax({ url : 'http://rguha.net/atv/atv.php', 
-success : function(data) {
- $("#all").html(data);
- $("div.dynacloud").dynaCloud();
-$("#all").hide();
-	}
-});
-});
+	$.merge($.dynaCloud.stopwords, [ "RT" ]);
+	$.dynaCloud.max = 150;
+	$.dynaCloud.sort = false;
+	$.dynaCloud.scale = 4;
+	$.blockUI({ message : '<img src="busy.gif" /> &nbsp; &nbsp; Loading tag cloud...', css: { 
+		    border: 'none', 
+			padding: '15px', 
+			backgroundColor: '#000', 
+			'-webkit-border-radius': '10px', 
+			'-moz-border-radius': '10px', 
+			opacity: .5, 
+			color: '#fff' 
+			} });
+	$.ajax({ url : 'http://rguha.net/atv/atv.php', 
+		    success : function(data) {
+		    $("#all").html(data);
+		    $("div.dynacloud").dynaCloud();
+		    $("#all").hide();
+		    $.unblockUI();
+		}
+	    });
+    });
 </script>
 <style type="text/css">
   body {
@@ -27,6 +39,14 @@ $("#all").hide();
   h2 {
     color: black ;
   }
+  #dynacloud { -moz-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background-color: white;
+    padding : 10px;
+    margin: 5px;
+      background-color: #E0E0E0;
+  }
   </style>
 </head>
 <body>
@@ -34,5 +54,6 @@ $("#all").hide();
 <div id="all" class="dynacloud">
 </div>
 
+<div id=="dynacloud"></div>
 </body>
 </html>
