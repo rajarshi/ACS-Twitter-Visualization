@@ -1,17 +1,17 @@
 <html>
 <head>
-
+<META HTTP-EQUIV=REFRESH CONTENT=60>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="http://johannburkard.de/resources/Johann/jquery.dynacloud-5.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 //$.merge($.dynacloud.stopwords, [ "RT" ]);
-$.dynaCloud.max = 100;
+$.dynaCloud.max = 150;
 $.dynaCloud.sort = false;
 $.ajax({ url : 'http://rguha.net/atv/atv.php', 
-	success : function(data) {
-	 $("#all").html(data);
-	 $("div.dynacloud").dynaCloud();
+success : function(data) {
+ $("#all").html(data);
+ $("div.dynacloud").dynaCloud();
 $("#all").hide();
 	}
 });
