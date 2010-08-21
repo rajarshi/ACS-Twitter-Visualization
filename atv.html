@@ -1,0 +1,25 @@
+<html>
+<head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.js"></script>
+<script type="text/javascript" src="http://johannburkard.de/resources/Johann/jquery.dynacloud-5.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+$.ajax({ url : 'http://rguha.net/atv/atv.php', 
+	success : function(data) {
+	 $("#all").html(data);
+	 $("div.dynacloud").dynaCloud();
+$("#all").hide();
+	}
+});
+});
+</script>
+
+</head>
+<body>
+<h2>Word Cloud for All #acs_boston Tweets</h3>
+<div id="all" class="dynacloud">
+</div>
+
+</body>
+</html>
