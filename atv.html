@@ -3,6 +3,7 @@
 <!-- <META HTTP-EQUIV=REFRESH CONTENT=60> -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="http://johannburkard.de/resources/Johann/jquery.dynacloud-5.js"></script>
+<!--<script type="text/javascript" src="http://rguha.net/atv/jquery.dynacloud-5.js"></script>-->
 <script type="text/javascript" src="http://github.com/malsup/blockui/raw/master/jquery.blockUI.js?v2.31"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -22,6 +23,18 @@ $(document).ready(function() {
 			opacity: .5, 
 			color: '#fff' 
 			} });
+	$.ajax({ url : 'http://rguha.net/atv/atv.php?term=%23acs_boston&what=author',
+		    success : function(data) {
+		    var toks = data.split("\n");
+		    var table = "<table>";
+		    for (var i = 0; i < toks.length; i++) {
+			var tok = toks[i];
+			var cols = tok.split(" ");
+			table = table + "<tr><td>"+cols[0]+"</td><td>"+cols[1]+"</td></tr>";
+		    }
+		    $("#hist").html(table);
+		}
+	    });
 	$.ajax({ url : 'http://rguha.net/atv/atv.php?term=%23acs_boston&what=text', 
 		    success : function(data) {
 		    $("#all").html(data);
@@ -30,9 +43,11 @@ $(document).ready(function() {
 		    $.unblockUI();
 		}
 	    });
+
     });
 </script>
 <style type="text/css">
+#credits { font-size: small; font-style: italic; }
   body {
     color: blue ;
     background-color: white ;
@@ -108,6 +123,7 @@ $(document).ready(function() {
 </div>
 
 <div id=="dynacloud"></div>
+<div id="hist"></div>
 
 </body>
 </html>

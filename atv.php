@@ -22,8 +22,9 @@ if ($what == "text") {
     if ($ret[$author] == NULL) $ret[$author] = 1;
     else $ret[$author] = $ret[$author]+1;
   }
-  header('Content-type: application/json');
-  echo json_encode($ret);
+  $txt = "";
+  foreach ($ret as $key => $value) $txt = $txt . $key . " " . $value . "\n";
+  echo $txt;
 }
 
 ?>
