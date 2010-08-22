@@ -19,12 +19,12 @@ if ($what == "text") {
   # as I can't see how to make the jQuery plugin
   # to this
   $ret = str_replace(" RT ", "", $ret);
-  $ret = str_replace(" Boston ", "", $ret);
-  $ret = str_replace(" ACS ", "", $ret);
   $ret = str_replace(" #ACS_Boston ", "", $ret);
   $ret = str_replace(" Meeting ", "", $ret);
   $ret = str_replace("ACSNatlMtg", "", $ret);
-
+  $ret = str_replace("OK", "", $ret);
+  $ret = str_replace("ACS", "", $ret);
+  $ret = str_replace("Boston", "", $ret);
 
   echo $ret;
 } else if ($what == "author") {
