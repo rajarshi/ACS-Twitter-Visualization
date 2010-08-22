@@ -14,6 +14,16 @@ if ($what == "text") {
   foreach ($results as $result) {
     $ret = $ret . " " . $result->{'text'};
   }
+
+  # remove some common words - we do this here
+  # as I can't see how to make the jQuery plugin
+  # to this
+  $ret = str_replace(" RT ", "", $ret);
+  $ret = str_replace(" Boston ", "", $ret);
+  $ret = str_replace(" ACS ", "", $ret);
+  $ret = str_replace(" #CS_Boston ", "", $ret);
+
+
   echo $ret;
 } else if ($what == "author") {
   $ret = array();
