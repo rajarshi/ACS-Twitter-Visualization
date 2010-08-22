@@ -20,7 +20,10 @@ if ($what == "text") {
   # to this
   $needles = array(" RT ", " #ACS_Boston ", " Meeting ", "ACSNatlMtg", "OK",
 		   "ACS", "Boston", "Visit", "Meeting", "Still", "Just", "Need",
-		   "Want", "Attending");
+		   "Want", "Attending", "Getting", "SADI", "Join", "Currently", "Meet",
+		   "Everyone", "Hotel", "Seaport", "Ballroom", "June", "Guess", "Session",
+		   "Follow", "First", "LeighJKBoerner", "Booth", "PM", "PSI", "Monday",
+		   "Will", "Somewhere");
   foreach ($needles as $needle) {
     $ret = str_replace($needle, "", $ret);
   }

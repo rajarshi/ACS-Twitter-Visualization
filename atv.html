@@ -6,7 +6,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 	$.merge($.dynaCloud.stopwords, [ "RT" ]);
-	$.dynaCloud.max = 150;
+	$.dynaCloud.max = 250;
 	$.dynaCloud.sort = false;
 	$.dynaCloud.scale = 4;
 	$('#refreshbtn').click(function() {
@@ -79,6 +79,7 @@ $(document).ready(function() {
       background-color: #E0E0E0;
   margin-top: 20px;
   margin-left: 200px; border: 1px solid black; 
+  text-align: left;
   }
   #hist { width: 180px;  float: left; color: black; }
   td { color: black; }
