@@ -1,6 +1,5 @@
 <html>
 <head>
-<!-- <META HTTP-EQUIV=REFRESH CONTENT=60> -->
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="http://johannburkard.de/resources/Johann/jquery.dynacloud-5.js"></script>
 <!--<script type="text/javascript" src="http://rguha.net/atv/jquery.dynacloud-5.js"></script>-->
@@ -30,7 +29,7 @@ $(document).ready(function() {
 		    for (var i = 0; i < toks.length; i++) {
 			var cols = toks[i].split(" ");
 			if (typeof cols[1] == 'undefined') continue;
-			table = table + "<tr><td>"+cols[0]+"</td><td>"+cols[1]+"</td></tr>";
+			table = table + "<tr><td><a href='http://twitter.com/"+cols[0]+"'>"+cols[0]+"</a></td><td>"+cols[1]+"</td></tr>";
 		    }
 		    $("#hist").html("<h3>Tweeter Scoreboard</h3>"+table);
 		}
