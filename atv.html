@@ -13,7 +13,7 @@ $(document).ready(function() {
 	$('#refreshbtn').click(function() {
                 location.reload();
         });
-	$.blockUI({ message : '<img src="busy.gif" /> &nbsp; &nbsp; Loading tag cloud...', css: { 
+	$("#dynacloud").block({ message : '<img src="busy.gif" /> &nbsp; &nbsp; Loading tag cloud...', css: { 
 		    border: 'none', 
 			padding: '15px', 
 			backgroundColor: '#000', 
@@ -22,6 +22,16 @@ $(document).ready(function() {
 			opacity: .5, 
 			color: '#fff' 
 			} });
+	$("#hist").block({ message : '<img src="busy.gif" /> &nbsp; &nbsp; Getting author counts...', css: { 
+		    border: 'none', 
+			padding: '15px', 
+			backgroundColor: '#000', 
+			'-webkit-border-radius': '10px', 
+			'-moz-border-radius': '10px', 
+			opacity: .5, 
+			color: '#fff' 
+			} });
+
 	$.ajax({ url : 'atv.php?term=%23acs_boston&what=author',
 		    success : function(data) {
 		    var toks = data.split("\n");
@@ -32,6 +42,7 @@ $(document).ready(function() {
 			table = table + "<tr><td><a href='http://twitter.com/"+cols[0]+"'>"+cols[0]+"</a></td><td>"+cols[1]+"</td></tr>";
 		    }
 		    $("#hist").html("<h3>Tweeter Scoreboard</h3>"+table);
+		    $("#hist").unblock();
 		}
 	    });
 	$.ajax({ url : 'atv.php?term=%23acs_boston&what=text', 
@@ -39,7 +50,8 @@ $(document).ready(function() {
 		    $("#all").html(data);
 		    $("div.dynacloud").dynaCloud();
 		    $("#all").hide();
-		    $.unblockUI();
+		    //$.unblockUI();
+		    $("#dynacloud").unblock();
 		}
 	    });
 
