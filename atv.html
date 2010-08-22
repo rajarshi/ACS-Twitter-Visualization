@@ -55,6 +55,12 @@ $(document).ready(function() {
   h2 {
       color: black ; display: inline; padding-right: 10px;
   }
+  #header { border: solid 1px black; 
+   margin-bottom: 5px; padding: 5px; 
+   background-color: #FFECB3;
+   -moz-border-radius: 10px;
+    border-radius: 10px;
+   }
   #dynacloud { -moz-border-radius: 10px;
     border-radius: 10px;
     border: 1px solid #333;
@@ -62,9 +68,10 @@ $(document).ready(function() {
     padding : 10px;
     margin: 5px;
       background-color: #E0E0E0;
-  width: 600px; border: 1px solid red; float: right;
+  width: 650px; border: 1px solid black; float: right;
   }
   #hist { width: 180px;  float: left; color: black;}
+  td { color: black; }
 #refreshbtn { padding:10px; font-size: 1.5em; }
 .button {
     display: inline-block;
@@ -117,8 +124,12 @@ $(document).ready(function() {
   </style>
 </head>
 <body>
+
+<div id="header">
 <h2>Word Cloud for All <a href="http://twitter.com/#search?q=%23acs_boston">#acs_boston</a> Tweets</h2>
 <button class="button blue" id="refreshbtn">Refresh</button>
+</div>
+
 <div id="all" class="dynacloud">
 </div>
 
