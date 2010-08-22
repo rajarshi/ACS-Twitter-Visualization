@@ -29,6 +29,7 @@ $(document).ready(function() {
 		    var table = "<table>";
 		    for (var i = 0; i < toks.length; i++) {
 			var cols = toks[i].split(" ");
+			if (typeof cols[1] == 'undefined') continue;
 			table = table + "<tr><td>"+cols[0]+"</td><td>"+cols[1]+"</td></tr>";
 		    }
 		    $("#hist").html("<h3>Tweeter Scoreboard</h3>"+table);
