@@ -25,6 +25,7 @@ if ($what == "text") {
   $ret = str_replace("OK", "", $ret);
   $ret = str_replace("ACS", "", $ret);
   $ret = str_replace("Boston", "", $ret);
+  $ret = str_replace("Visit", "", $ret);
 
   echo $ret;
 } else if ($what == "author") {
