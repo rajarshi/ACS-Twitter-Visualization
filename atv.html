@@ -2,7 +2,6 @@
 <head>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.2.js"></script>
 <script type="text/javascript" src="http://johannburkard.de/resources/Johann/jquery.dynacloud-5.js"></script>
-<!--<script type="text/javascript" src="http://rguha.net/atv/jquery.dynacloud-5.js"></script>-->
 <script type="text/javascript" src="http://github.com/malsup/blockui/raw/master/jquery.blockUI.js?v2.31"></script>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -50,7 +49,6 @@ $(document).ready(function() {
 		    $("#all").html(data);
 		    $("div.dynacloud").dynaCloud();
 		    $("#all").hide();
-		    //$.unblockUI();
 		    $("#dynacloud").unblock();
 		}
 	    });
@@ -138,7 +136,7 @@ $(document).ready(function() {
 <body>
 
 <div id="header">
-<h2>Word Cloud for All <a href="http://twitter.com/#search?q=%23acs_boston">#acs_boston</a> Tweets</h2>
+<h2>Word Cloud for <a href="http://twitter.com/#search?q=%23acs_boston">#acs_boston</a> Tweets</h2>
 <button class="button blue" id="refreshbtn">Refresh</button>
 </div>
 

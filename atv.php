@@ -18,15 +18,12 @@ if ($what == "text") {
   # remove some common words - we do this here
   # as I can't see how to make the jQuery plugin
   # to this
-  $ret = str_replace(" RT ", "", $ret);
-  $ret = str_replace(" #ACS_Boston ", "", $ret);
-  $ret = str_replace(" Meeting ", "", $ret);
-  $ret = str_replace("ACSNatlMtg", "", $ret);
-  $ret = str_replace("OK", "", $ret);
-  $ret = str_replace("ACS", "", $ret);
-  $ret = str_replace("Boston", "", $ret);
-  $ret = str_replace("Visit", "", $ret);
-  $ret = str_replace("Meeting", "", $ret);
+  $needles = array(" RT ", " #ACS_Boston ", " Meeting ", "ACSNatlMtg", "OK",
+		   "ACS", "Boston", "Visit", "Meeting", "Still", "Just", "Need",
+		   "Want", "Attending");
+  foreach ($needles as $needle) {
+    $ret = str_replace($needle, "", $ret);
+  }
 
   echo $ret;
 } else if ($what == "author") {
