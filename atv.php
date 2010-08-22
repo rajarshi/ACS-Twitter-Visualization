@@ -22,6 +22,8 @@ if ($what == "text") {
   $ret = str_replace(" Boston ", "", $ret);
   $ret = str_replace(" ACS ", "", $ret);
   $ret = str_replace(" #ACS_Boston ", "", $ret);
+  $ret = str_replace(" Meeting ", "", $ret);
+  $ret = str_replace("ACSNatlMtg", "", $ret);
 
 
   echo $ret;
