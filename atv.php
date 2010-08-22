@@ -21,7 +21,7 @@ if ($what == "text") {
   $ret = str_replace(" RT ", "", $ret);
   $ret = str_replace(" Boston ", "", $ret);
   $ret = str_replace(" ACS ", "", $ret);
-  $ret = str_replace(" #CS_Boston ", "", $ret);
+  $ret = str_replace(" #ACS_Boston ", "", $ret);
 
 
   echo $ret;
