@@ -28,11 +28,10 @@ $(document).ready(function() {
 		    var toks = data.split("\n");
 		    var table = "<table>";
 		    for (var i = 0; i < toks.length; i++) {
-			var tok = toks[i];
-			var cols = tok.split(" ");
+			var cols = toks[i].split(" ");
 			table = table + "<tr><td>"+cols[0]+"</td><td>"+cols[1]+"</td></tr>";
 		    }
-		    $("#hist").html(table);
+		    $("#hist").html("<h3>Tweeter Scoreboard</h3>"+table);
 		}
 	    });
 	$.ajax({ url : 'http://rguha.net/atv/atv.php?term=%23acs_boston&what=text', 
@@ -47,7 +46,6 @@ $(document).ready(function() {
     });
 </script>
 <style type="text/css">
-#credits { font-size: small; font-style: italic; }
   body {
     color: blue ;
     background-color: white ;
@@ -64,7 +62,9 @@ $(document).ready(function() {
     padding : 10px;
     margin: 5px;
       background-color: #E0E0E0;
+  width: 600px; border: 1px solid red; float: right;
   }
+  #hist { width: 180px;  float: left; color: black;}
 #refreshbtn { padding:10px; font-size: 1.5em; }
 .button {
     display: inline-block;
@@ -122,8 +122,11 @@ $(document).ready(function() {
 <div id="all" class="dynacloud">
 </div>
 
-<div id=="dynacloud"></div>
+<div id="container">
 <div id="hist"></div>
+<div id=="dynacloud"></div>
+<div class="clear"></div>
+</div>
 
 </body>
 </html>
