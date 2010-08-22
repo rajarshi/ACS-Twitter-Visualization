@@ -26,7 +26,6 @@ if ($what == "text") {
   foreach ($ret as $key => $value) {
     if ($value > 1) {
       $cleanret[$key] = $value;
-      echo $key . " " . $value;
     }
   }
   $txt = "";
