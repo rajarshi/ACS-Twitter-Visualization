@@ -22,8 +22,15 @@ if ($what == "text") {
     if ($ret[$author] == NULL) $ret[$author] = 1;
     else $ret[$author] = $ret[$author]+1;
   }
+  $cleanret = array();
+  foreach ($ret as $key => $value) {
+    if ($value > 1) {
+      $cleanret[$key] = $value;
+      echo $key . " " . $value;
+    }
+  }
   $txt = "";
-  foreach ($ret as $key => $value) $txt = $txt . $key . " " . $value . "\n";
+  foreach ($cleanret as $key => $value) $txt = $txt . $key . " " . $value . "\n";
   echo $txt;
 }
 
